@@ -3,12 +3,21 @@ package by.bat;
 public class Person {
     private IPet pet;
 
-    public Person(IPet pet) {
+/*    public Person(IPet pet) {
         System.out.println("Create person bean");
+        this.pet = pet;
+    }*/
+
+    public Person() {
+        System.out.println("Create person bean");
+    }
+
+    public void setPet(IPet pet) {
+        System.out.println("Person set pet");
         this.pet = pet;
     }
 
-    public void callPet(){
+    public void callPet() {
         System.out.println("Hello my Pet");
         pet.say();
     }
