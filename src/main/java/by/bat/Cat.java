@@ -1,5 +1,8 @@
 package by.bat;
 
+import org.springframework.stereotype.Component;
+
+@Component("catBean")
 public class Cat implements IPet{
     public Cat() {
         System.out.println("bean for cat");
