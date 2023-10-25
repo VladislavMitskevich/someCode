@@ -18,7 +18,7 @@ public class Dog implements IPet{
         System.out.println("Bow-Wow");
     }
 
-    @PostConstruct
+/*    @PostConstruct
     public void init(){
         System.out.println("init method");
     }
@@ -26,7 +26,7 @@ public class Dog implements IPet{
     @PreDestroy
     public void destroy(){
         System.out.println("destroy method");
-    }
+    }*/
 
 /*    public String getName() {
         return name;
