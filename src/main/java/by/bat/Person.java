@@ -1,18 +1,23 @@
 package by.bat;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private IPet pet;
     private String surname;
     private int age;
 
-/*    public Person(IPet pet) {
+    //  @Autowired
+    public Person(IPet pet) {
         System.out.println("Create person bean");
         this.pet = pet;
-    }*/
-
-    public Person() {
-        System.out.println("Create person bean");
     }
+
+/*    public Person() {
+        System.out.println("Create person bean");
+    }*/
 
     public void setPet(IPet pet) {
         System.out.println("Person set pet");
