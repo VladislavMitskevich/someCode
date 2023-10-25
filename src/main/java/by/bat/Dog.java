@@ -1,12 +1,7 @@
 package by.bat;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
-@Component
+//@Component
 public class Dog implements IPet{
    // private String name;
     public Dog() {
