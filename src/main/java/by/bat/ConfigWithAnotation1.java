@@ -13,6 +13,8 @@ public class ConfigWithAnotation1 {
 /*        Cat myCat = context.getBean("catBean", Cat.class);
         myCat.say();*/
 
+        System.out.println(person.getSurname());
+
         context.close();
     }
 }
