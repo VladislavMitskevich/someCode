@@ -1,6 +1,10 @@
 package by.bat;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 public class Dog implements IPet{
@@ -14,10 +18,12 @@ public class Dog implements IPet{
         System.out.println("Bow-Wow");
     }
 
+    @PostConstruct
     public void init(){
         System.out.println("init method");
     }
 
+    @PreDestroy
     public void destroy(){
         System.out.println("destroy method");
     }
