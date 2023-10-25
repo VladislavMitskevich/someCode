@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
+    @Autowired
     private IPet pet;
     private String surname;
     private int age;
@@ -18,7 +19,7 @@ public class Person {
         public Person() {
             System.out.println("Create person bean");
         }*/
-    @Autowired
+    //@Autowired
     public void setPet(IPet pet) {
         System.out.println("Person set pet");
         this.pet = pet;
