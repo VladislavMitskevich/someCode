@@ -10,7 +10,7 @@ public class Test4 {
         Dog myDog = context.getBean("myPet", Dog.class);
         //  myDog.setName("jojo");
         Dog yourDog = context.getBean("myPet", Dog.class);
-        //   yourDog.setName("belka");
+        // yourDog.setName("belka");
 
         //  System.out.println(myDog.getName());
         //  System.out.println(yourDog.getName());

@@ -9,7 +9,10 @@
 
     <bean id="myPet"
           class="by.bat.Dog"
-          scope="prototype">
+          init-method="init"
+          destroy-method="destroy">
+        <!--scope="prototype"-->
+
     </bean>
 
 

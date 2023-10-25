@@ -1,7 +1,7 @@
 package by.bat;
 
 public class Dog implements IPet{
-    private String name;
+   // private String name;
     public Dog() {
         System.out.println("bean for dog");
     }
@@ -11,11 +11,19 @@ public class Dog implements IPet{
         System.out.println("Bow-Wow");
     }
 
-    public String getName() {
+    public void init(){
+        System.out.println("init method");
+    }
+
+    public void destroy(){
+        System.out.println("destroy method");
+    }
+
+/*    public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
+    }*/
 }
