@@ -9,16 +9,16 @@ public class Person {
     private String surname;
     private int age;
 
-    //  @Autowired
-    public Person(IPet pet) {
-        System.out.println("Create person bean");
-        this.pet = pet;
-    }
+    /*   @Autowired
+        public Person(IPet pet) {
+            System.out.println("Create person bean");
+            this.pet = pet;
+        }
 
-/*    public Person() {
-        System.out.println("Create person bean");
-    }*/
-
+        public Person() {
+            System.out.println("Create person bean");
+        }*/
+    @Autowired
     public void setPet(IPet pet) {
         System.out.println("Person set pet");
         this.pet = pet;
