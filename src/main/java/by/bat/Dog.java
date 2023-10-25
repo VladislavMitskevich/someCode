@@ -1,5 +1,8 @@
 package by.bat;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dog implements IPet{
    // private String name;
     public Dog() {
