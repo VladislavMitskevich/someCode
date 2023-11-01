@@ -3,6 +3,7 @@ package by.bat.aop.aspects;
 
 import by.bat.aop.Student;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -13,12 +14,12 @@ import java.util.List;
 @Aspect
 public class UniversityLoggingAspect {
 
-    @Before("execution(* getStudents())")
+/*    @Before("execution(* getStudents())")
     public void beforeGetStudentsAdvice(){
         System.out.println("beforeGetStudentsAdvice: logging before method get Students");
-    }
+    }*/
 
-    @AfterReturning(pointcut = "execution(* getStudents())", returning = "ger")
+/*    @AfterReturning(pointcut = "execution(* getStudents())", returning = "ger")
     public void afterGetStudentsAdvice(List<Student> ger){
 
         Student firstStudent = ger.get(0);
@@ -32,5 +33,10 @@ public class UniversityLoggingAspect {
         firstStudent.setAvgGrade(avgGrade);
 
         System.out.println("afterGetStudentsAdvice: logging after method get Students");
+    }*/
+
+    @AfterThrowing (pointcut = "execution(* getStudents())", throwing = "exception")
+    public void afterThrowingGetStudentsAdvice(Throwable exception){
+        System.out.println("afterThrowingGetStudentsAdvice: logging exit throwing " + exception);
     }
 }
