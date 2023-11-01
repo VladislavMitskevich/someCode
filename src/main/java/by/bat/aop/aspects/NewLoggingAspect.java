@@ -10,15 +10,17 @@ import org.springframework.stereotype.Component;
 public class NewLoggingAspect {
 
     @Around("execution (public String returnBook())")
-    public Object aroundReturnBookLoggingAdvice(ProceedingJoinPoint point) throws Throwable{
+    public Object aroundReturnBookLoggingAdvice(ProceedingJoinPoint point) throws Throwable {
         System.out.println("aroundReturnBookLoggingAdvice: in lib trying return the book");
-        long begin = System.currentTimeMillis();
-        Object targetMethodResult = point.proceed();
-       // targetMethodResult = "Dracul";
-        long end = System.currentTimeMillis();
-        long time = end-begin;
-        System.out.println("aroundReturnBookLoggingAdvice: in lib return the book sucses");
-        System.out.println("roundReturnBookLoggingAdvice: method do work by time - " + time + " ms");
-        return targetMethodResult;
+
+        Object targetMethodResult = null;
+        try {
+            targetMethodResult = point.proceed();
+        } catch (Exception e){
+            System.out.println("aroundReturnBookLoggingAdvice: we catch exception - " + e);
+            targetMethodResult = "Unknown name of the book";
+        }
+            System.out.println("aroundReturnBookLoggingAdvice: in lib return the book sucses");
+            return targetMethodResult;
+        }
     }
-}
