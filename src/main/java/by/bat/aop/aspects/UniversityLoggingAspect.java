@@ -1,0 +1,36 @@
+package by.bat.aop.aspects;
+
+
+import by.bat.aop.Student;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+@Aspect
+public class UniversityLoggingAspect {
+
+    @Before("execution(* getStudents())")
+    public void beforeGetStudentsAdvice(){
+        System.out.println("beforeGetStudentsAdvice: logging before method get Students");
+    }
+
+    @AfterReturning(pointcut = "execution(* getStudents())", returning = "ger")
+    public void afterGetStudentsAdvice(List<Student> ger){
+
+        Student firstStudent = ger.get(0);
+
+        String nameSurname = firstStudent.getNameSurname();
+        nameSurname = "Mr. " + nameSurname;
+        firstStudent.setNameSurname(nameSurname);
+
+        double avgGrade = firstStudent.getAvgGrade();
+        avgGrade = avgGrade + 1;
+        firstStudent.setAvgGrade(avgGrade);
+
+        System.out.println("afterGetStudentsAdvice: logging after method get Students");
+    }
+}
